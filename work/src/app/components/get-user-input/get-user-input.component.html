@@ -1,0 +1,11 @@
+<form [formGroup]="userInputForm" (ngSubmit)="submitUserForm()">
+  <input type="text" formControlName="login" placeholder="Enter username"/>
+  <button type="submit">Search for user</button>
+</form>
+
+<div *ngIf="userData$ | async as userData">
+  <p>here</p>
+  <p>Login: {{userData.login}}</p>
+  <p>Followers: {{userData.followers}}</p>
+  <p>Following: {{userData.following}}</p>
+</div>
